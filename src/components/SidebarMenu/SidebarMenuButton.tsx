@@ -10,12 +10,10 @@ interface Props {
 }
 
 export const SidebarMenuButton: FC<Props> = ({ label, IconComponent, isOpen, hasChildren }) => (
-    <Flex align='center' justify='space-between' w='100%'>
+    <Flex align='center' justify='space-between' w='100%' pr={1}>
         <Flex align='center' gap={3} pl={2}>
             {IconComponent && <Icon as={IconComponent} style={{ width: 24, height: 24 }} />}
-            <Text textAlign='left' pl={0.5}>
-                {label}
-            </Text>
+            <Text textAlign='left'>{label}</Text>
         </Flex>
         <Icon
             as={ChevronDownIcon}

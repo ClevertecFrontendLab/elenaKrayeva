@@ -10,8 +10,8 @@ interface Props {
 }
 
 export const SidebarSubItem: FC<Props> = ({ label, path, active, onClick }) => (
-    <Flex align='center' py={1.5} pl={2}>
-        <Box width='8px' minH='24px' position='relative'>
+    <Flex align='center' py={1.5} pl={1}>
+        <Box width={2} minH='24px' position='relative'>
             <Box
                 position='absolute'
                 top='0'
@@ -21,7 +21,7 @@ export const SidebarSubItem: FC<Props> = ({ label, path, active, onClick }) => (
                 bg='lime.300'
             />
         </Box>
-        <Box flexShrink={0} width='12px' />
+        <Box flexShrink={0} width={3} />
         <Link
             as={RouterLink}
             to={path}
