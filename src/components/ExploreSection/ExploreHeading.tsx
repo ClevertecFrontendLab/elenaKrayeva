@@ -1,7 +1,11 @@
 import { Flex, Text } from '@chakra-ui/react';
 
-export const ExploreHeading = () => (
+interface ExploreHeadingProps {
+    title: string;
+}
+
+export const ExploreHeading = ({ title }: ExploreHeadingProps) => (
     <Flex justify='center' pl={2}>
-        <Text textStyle='headingBold48'>Приятного аппетита!</Text>
+        <Text textStyle='headingBold48'>{title}</Text>
     </Flex>
 );
