@@ -1,6 +1,8 @@
 import { Button, Flex, SimpleGrid } from '@chakra-ui/react';
 import { v4 as uuidv4 } from 'uuid';
 
+import AlexAvatarImg from '~/assets/avatars/Avatar1.jpg';
+import ElenaAvatarImg from '~/assets/avatars/Avatar2.jpg';
 import FirstDishIcon from '~/assets/first_dish.svg?react';
 import GrillIcon from '~/assets/gril.svg?react';
 import HeartIcon from '~/assets/heart.svg?react';
@@ -33,6 +35,10 @@ const secondDishNew = [
         },
         saves: 258,
         likes: 342,
+        recommendation: {
+            name: 'Alex Cook',
+            avatar: AlexAvatarImg,
+        },
     },
     {
         id: uuidv4(),
@@ -59,6 +65,10 @@ const secondDishNew = [
         },
         saves: 159,
         likes: 257,
+        recommendation: {
+            name: 'Елена Высоцкая',
+            avatar: ElenaAvatarImg,
+        },
     },
     {
         id: uuidv4(),
@@ -175,6 +185,10 @@ export const TopPicksPage = () => (
                         category={dish.category}
                         likes={dish.likes}
                         saves={dish.saves}
+                        recommendation={{
+                            name: dish.recommendation?.name,
+                            avatar: dish.recommendation?.avatar,
+                        }}
                     />
                 ))}
             </SimpleGrid>

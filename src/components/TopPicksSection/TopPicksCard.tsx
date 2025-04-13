@@ -1,18 +1,23 @@
-import { Button, Flex, Image } from '@chakra-ui/react';
+import { Box, Button, Flex, Image } from '@chakra-ui/react';
 
 import HeartIcon from '~/assets/heart.svg?react';
 import HeartEyesIcon from '~/assets/heart_eyes.svg?react';
 import { RecipeCategoryBadge } from '~/components/Cards/RecipeCategoryBadge';
 import { RecipeTextContent } from '~/components/Cards/RecipeTextContent';
 import { Category } from '~/components/Cards/types';
+import { RecommendationBadge } from '~/components/RecommendationBadge/RecommendationBadge';
 
-interface TopPicksCardProps {
+export interface TopPicksCardProps {
     image: string;
     title: string;
     description: string;
     category: Category;
     likes?: number;
     saves?: number;
+    recommendation?: {
+        name?: string;
+        avatar?: string;
+    };
 }
 
 export const TopPicksCard = ({
@@ -22,6 +27,7 @@ export const TopPicksCard = ({
     category,
     likes,
     saves,
+    recommendation,
 }: TopPicksCardProps) => (
     <Flex
         border='1px solid'
@@ -31,7 +37,12 @@ export const TopPicksCard = ({
         boxShadow='sm'
         bg='white'
     >
-        <Image src={image} alt={title} width='346px' height='244px' objectFit='cover' />
+        <Box position='relative'>
+            <Image src={image} alt={title} width='346px' height='244px' objectFit='cover' />
+            {recommendation?.name && (
+                <RecommendationBadge name={recommendation.name} avatar={recommendation.avatar} />
+            )}
+        </Box>
 
         <Flex direction='column' px={6} pt={4} pb={5} gap={6}>
             <RecipeCategoryBadge

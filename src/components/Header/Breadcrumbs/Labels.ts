@@ -9,4 +9,5 @@ export const breadcrumbLabels: Record<string, string> = {
     bakery: 'Выпечка',
     raw: 'Сыроедческие блюда',
     drinks: 'Напитки',
+    toppicks: 'Самое сочное',
 };
