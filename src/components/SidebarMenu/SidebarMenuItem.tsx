@@ -14,6 +14,7 @@ interface SidebarMenuItemProps {
     setActiveId: (id: string) => void;
     openItemId: string | null;
     setOpenItemId: (id: string | null) => void;
+    dataTestId?: string;
 }
 
 export const SidebarMenuItem: FC<SidebarMenuItemProps> = ({
@@ -22,6 +23,7 @@ export const SidebarMenuItem: FC<SidebarMenuItemProps> = ({
     setActiveId,
     openItemId,
     setOpenItemId,
+    dataTestId,
 }) => {
     const navigate = useNavigate();
     const { label, path, icon: IconComponent, children } = item;
@@ -68,6 +70,7 @@ export const SidebarMenuItem: FC<SidebarMenuItemProps> = ({
                     justify='space-between'
                     w='100%'
                     aria-expanded={isOpenState}
+                    data-test-id={dataTestId}
                     {...commonProps}
                 >
                     <SidebarMenuButton

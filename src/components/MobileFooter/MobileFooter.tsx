@@ -14,6 +14,7 @@ export const MobileFooter = () => {
 
     return (
         <Flex
+            as='footer'
             position='fixed'
             bottom='0'
             left='0'
@@ -26,6 +27,7 @@ export const MobileFooter = () => {
             align='center'
             px={2}
             py={1}
+            data-test-id='footer'
         >
             <FooterButton icon={HomeIcon} label='Главная' size='40px' />
             <FooterButton icon={SearchIcon} label='Поиск' size='48px' />

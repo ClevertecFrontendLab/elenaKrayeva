@@ -97,6 +97,7 @@ export const TopPicksSection = () => {
                     bgColor='lime.400'
                     _hover={{ bg: 'lime.400' }}
                     display={{ base: 'none', lg: 'flex' }}
+                    data-test-id='juiciest-link'
                 >
                     Вся подборка
                 </Button>
@@ -128,6 +129,7 @@ export const TopPicksSection = () => {
                     rightIcon={<ArrowRightBlackIcon width='16px' height='16px' />}
                     bgColor='lime.400'
                     _hover={{ bg: 'lime.400' }}
+                    data-test-id='juiciest-link-mobile'
                 >
                     Вся подборка
                 </Button>

@@ -32,6 +32,7 @@ export const AppLayout = () => {
                 left='0'
                 right='0'
                 zIndex='1000'
+                data-test-id='header'
             >
                 <Container
                     size='xl'

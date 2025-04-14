@@ -19,6 +19,7 @@ export const SidebarMenu = () => {
                     setActiveId={setActiveId}
                     openItemId={openItemId}
                     setOpenItemId={setOpenItemId}
+                    dataTestId={item.label === 'Веганская кухня' ? 'vegan-cuisine' : undefined}
                 />
             ))}
         </Box>
