@@ -160,7 +160,16 @@ const cookInfo = [
 
 export const SecondDishPage = () => (
     <>
-        <SimpleGrid columns={{ base: 1, md: 2 }} spacing={6} mb={4}>
+        <SimpleGrid
+            columns={{
+                base: 1,
+                md: 2,
+                lg: 1,
+                xl: 2,
+            }}
+            spacing={6}
+            mb={4}
+        >
             {secondDishNew.map((dish) => (
                 <TopPicksCard
                     key={dish.id}
