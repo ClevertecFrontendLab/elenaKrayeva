@@ -1,10 +1,10 @@
 import { Box } from '@chakra-ui/react';
 import { v4 as uuidv4 } from 'uuid';
 
-import FirstDishIcon from '~/assets/first_dish.svg?react';
-import HeartIcon from '~/assets/heart.svg?react';
-import HeartEyesIcon from '~/assets/heart_eyes.svg?react';
-import SecondDishIcon from '~/assets/second_dish.svg?react';
+import FirstDishIcon from '~/assets/icons/first_dish.svg?react';
+import HeartIcon from '~/assets/icons/heart.svg?react';
+import HeartEyesIcon from '~/assets/icons/heart_eyes.svg?react';
+import SecondDishIcon from '~/assets/icons/second_dish.svg?react';
 import { RecipeSection } from '~/components/Sections/RecipeSection';
 
 const cardsInfo = [

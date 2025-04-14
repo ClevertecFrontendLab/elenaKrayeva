@@ -13,16 +13,30 @@ export const RecipeSection = ({
     heartEyesIcon,
 }: RecipeSectionProps) => (
     <Flex direction='column' gap={6} mb={10}>
-        <Flex justify='space-between' gap={3} pt={6}>
-            <Box flex='1'>
+        <Flex justify='space-between' gap={3} pt={6} flexWrap='wrap'>
+            <Box
+                flexShrink={1}
+                flexBasis={{ base: '100%', md: '100%', lg: '50%' }}
+                mb={{ base: 4, md: 4, lg: 0 }}
+            >
                 <Text textStyle='heading48'>{sectionTitle}</Text>
             </Box>
-            <Box width='668px' pl={3}>
+            <Box flexShrink={0} width={{ base: '100%', md: '100%', lg: '668px' }}>
                 <Text>{sectionDescription}</Text>
             </Box>
         </Flex>
-        <Flex gap={8}>
-            <Flex flex='1' gap={6}>
+
+        <Flex direction={{ base: 'column', md: 'row' }} gap={{ base: 3, lg: 6 }}>
+            <Flex
+                direction={{ base: 'column', md: 'row' }}
+                gap={{ base: 3, lg: 6 }}
+                width={{
+                    base: '100%',
+                    md: '476px',
+                    lg: '580px',
+                    xl: '668px',
+                }}
+            >
                 {verticalCards.map((card) => (
                     <VerticalRecipeCard
                         key={card.id}
@@ -39,7 +53,17 @@ export const RecipeSection = ({
                     />
                 ))}
             </Flex>
-            <Flex direction='column' flex='1' gap={3}>
+
+            <Flex
+                direction='column'
+                gap={3}
+                width={{
+                    base: '100%',
+                    md: '240px',
+                    lg: '282px',
+                    xl: '668px',
+                }}
+            >
                 {horizontalCards.map((card) => (
                     <HorizontalRecipeCard
                         key={card.id}

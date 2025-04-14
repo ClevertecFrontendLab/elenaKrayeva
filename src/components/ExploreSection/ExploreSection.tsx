@@ -22,7 +22,9 @@ export const ExploreSection = ({ headingTitle, headingDescription }: ExploreSect
             )}
             <Flex direction='column' gap={4} maxWidth='518px' alignSelf='center'>
                 <RecipeSearchBar />
-                <AllergenFilterControls />
+                <Box display={{ base: 'none', lg: 'block' }}>
+                    <AllergenFilterControls />
+                </Box>
             </Flex>
         </Flex>
     </Flex>

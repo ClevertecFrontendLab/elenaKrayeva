@@ -1,18 +1,18 @@
 import { v4 as uuidv4 } from 'uuid';
 
-import BlanksIcon from '~/assets/blanks.svg?react';
-import DesertsIcon from '~/assets/deserts.svg?react';
-import DrinksIcon from '~/assets/drinks.svg?react';
-import FirstDishIcon from '~/assets/first_dish.svg?react';
-import GrilIcon from '~/assets/gril.svg?react';
-import HealthyIcon from '~/assets/healthy.svg?react';
-import KidsIcon from '~/assets/kids.svg?react';
-import NationalIcon from '~/assets/national.svg?react';
-import SaladIcon from '~/assets/salad.svg?react';
-import SaucesIcon from '~/assets/sauces.svg?react';
-import SecondDishIcon from '~/assets/second_dish.svg?react';
-import SnackIcon from '~/assets/snack.svg?react';
-import VeganIcon from '~/assets/vegan.svg?react';
+import BlanksIcon from '~/assets/icons/blanks.svg?react';
+import DesertsIcon from '~/assets/icons/deserts.svg?react';
+import DrinksIcon from '~/assets/icons/drinks.svg?react';
+import FirstDishIcon from '~/assets/icons/first_dish.svg?react';
+import GrilIcon from '~/assets/icons/gril.svg?react';
+import HealthyIcon from '~/assets/icons/healthy.svg?react';
+import KidsIcon from '~/assets/icons/kids.svg?react';
+import NationalIcon from '~/assets/icons/national.svg?react';
+import SaladIcon from '~/assets/icons/salad.svg?react';
+import SaucesIcon from '~/assets/icons/sauces.svg?react';
+import SecondDishIcon from '~/assets/icons/second_dish.svg?react';
+import SnackIcon from '~/assets/icons/snack.svg?react';
+import VeganIcon from '~/assets/icons/vegan.svg?react';
 
 import { MenuItem } from './types';
 

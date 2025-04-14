@@ -1,6 +1,6 @@
 import { Avatar, Box, Flex, Text } from '@chakra-ui/react';
 
-import avatarImage from '~/assets/avatar.png';
+import avatarImage from '~/assets/avatars/avatar.png';
 
 export const UserInfo = () => {
     const user = {

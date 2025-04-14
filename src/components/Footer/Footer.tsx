@@ -1,6 +1,6 @@
 import { Button, Flex, Text } from '@chakra-ui/react';
 
-import LogoutIcon from '~/assets/logout_btn.svg?react';
+import LogoutIcon from '~/assets/icons/logout_btn.svg?react';
 
 export const Footer = () => (
     <Flex direction='column' gap={4} px={2} pb={8}>

@@ -1,9 +1,13 @@
 import { Button, Flex, SimpleGrid } from '@chakra-ui/react';
 import { v4 as uuidv4 } from 'uuid';
 
-import GrillIcon from '~/assets/gril.svg?react';
-import HeartIcon from '~/assets/heart.svg?react';
-import HeartEyesIcon from '~/assets/heart_eyes.svg?react';
+import GrillIcon from '~/assets/icons/gril.svg?react';
+import HeartIcon from '~/assets/icons/heart.svg?react';
+import HeartEyesIcon from '~/assets/icons/heart_eyes.svg?react';
+import KidsIcon from '~/assets/icons/kids.svg?react';
+import NationalIcon from '~/assets/icons/national.svg?react';
+import SecondDishIcon from '~/assets/icons/second_dish.svg?react';
+import VeganIcon from '~/assets/icons/vegan.svg?react';
 import lasagnaImg from '~/assets/images/lasagna.jpg';
 import meatballsImg from '~/assets/images/meatballs.jpg';
 import potatoImg from '~/assets/images/potato.jpg';
@@ -11,10 +15,6 @@ import potatogarlImg from '~/assets/images/potatogarl.jpg';
 import puriImg from '~/assets/images/puri.jpg';
 import rollsImg from '~/assets/images/rolls.jpg';
 import tomyumImg from '~/assets/images/tomyam.jpg';
-import KidsIcon from '~/assets/kids.svg?react';
-import NationalIcon from '~/assets/national.svg?react';
-import SecondDishIcon from '~/assets/second_dish.svg?react';
-import VeganIcon from '~/assets/vegan.svg?react';
 import { RecipeSection } from '~/components/Sections/RecipeSection';
 import { TopPicksCard } from '~/components/TopPicksSection/TopPicksCard';
 

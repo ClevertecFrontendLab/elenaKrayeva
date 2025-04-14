@@ -1,4 +1,4 @@
-import { Flex, Icon, Text } from '@chakra-ui/react';
+import { Box, Flex, Icon, Text } from '@chakra-ui/react';
 
 import { Category } from '~/components/Cards/types';
 
@@ -9,6 +9,8 @@ interface Props {
     category: Category;
     HeartIcon?: React.ElementType;
     HeartEyesIcon?: React.ElementType;
+    alwaysShowBadge?: boolean;
+    forceSpaceBetween?: boolean;
 }
 
 export const RecipeCategoryBadge = ({
@@ -18,8 +20,16 @@ export const RecipeCategoryBadge = ({
     badgeBgColor = 'lime.150',
     HeartIcon,
     HeartEyesIcon,
+    alwaysShowBadge = false,
+    forceSpaceBetween = false,
 }: Props) => (
-    <Flex justify='space-between' align='center' mt='auto' color='blackAlpha.600'>
+    <Flex
+        justify={forceSpaceBetween ? 'space-between' : { base: 'flex-start', lg: 'space-between' }}
+        align='center'
+        mt='auto'
+        color='blackAlpha.600'
+        gap={2}
+    >
         <Flex
             align='center'
             gap={2}
@@ -28,15 +38,16 @@ export const RecipeCategoryBadge = ({
             borderRadius={4}
             py='2px'
             color='black'
+            display={alwaysShowBadge ? 'flex' : { base: 'none', md: 'none', lg: 'flex' }}
         >
             <Icon as={category.icon} boxSize={4} />
-            <Text fontSize='sm'>{category.name}</Text>
+            <Text textStyle='body14'>{category.name}</Text>
         </Flex>
 
         <Flex gap={2}>
             {saves && (
                 <Flex align='center' gap='6px'>
-                    <Icon as={HeartIcon} width='12px' height='12px' />
+                    <Box as={HeartIcon} width='12px' height='12px' />
                     <Text textStyle='body14' color='lime.600'>
                         {saves}
                     </Text>
@@ -44,7 +55,7 @@ export const RecipeCategoryBadge = ({
             )}
             {likes && (
                 <Flex align='center' gap='6px'>
-                    <Icon as={HeartEyesIcon} width='12px' height='12px' />
+                    <Box as={HeartEyesIcon} width='12px' height='12px' />
                     <Text textStyle='body14' color='lime.600'>
                         {likes}
                     </Text>

@@ -26,15 +26,20 @@ export const VerticalRecipeCard = ({
     <Flex
         direction='column'
         gap={4}
-        width='322px'
-        px={6}
-        pt={6}
-        pb={5}
+        width={{ base: '100%', md: 'calc((100% - 24px) / 2)', lg: '322px' }}
+        px={{ base: 3, md: 3, lg: 4, xl: 6 }}
+        pt={{ base: 3, md: 3, lg: 4, xl: 6 }}
+        pb={{ base: 3, md: 3, lg: 4, xl: 5 }}
         border='1px solid'
         borderColor='blackAlpha.200'
         borderRadius='8px'
     >
-        <RecipeTextContent title={title} description={description} />
+        <RecipeTextContent
+            title={title}
+            description={description}
+            alwaysShowDescription
+            fullWidth
+        />
         <RecipeCategoryBadge
             category={category}
             HeartIcon={HeartIcon}
@@ -42,6 +47,8 @@ export const VerticalRecipeCard = ({
             saves={saves}
             likes={likes}
             badgeBgColor='lime.50'
+            alwaysShowBadge
+            forceSpaceBetween
         />
     </Flex>
 );

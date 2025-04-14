@@ -37,6 +37,24 @@ export const textStyles = {
         fontSize: '20px',
         lineHeight: '28px',
     },
+    heading24: {
+        fontFamily: 'heading',
+        fontWeight: 'medium',
+        fontSize: '24px',
+        lineHeight: '32px',
+    },
+    heading30: {
+        fontFamily: 'heading',
+        fontWeight: 'medium',
+        fontSize: '30px',
+        lineHeight: '36px',
+    },
+    heading36: {
+        fontFamily: 'heading',
+        fontWeight: 'medium',
+        fontSize: '36px',
+        lineHeight: '40px',
+    },
     heading48: {
         fontFamily: 'heading',
         fontWeight: 'medium',
@@ -81,6 +99,12 @@ export const textStyles = {
         fontSize: '16px',
         lineHeight: '24px',
     },
+    heading24Bold: {
+        fontFamily: 'heading',
+        fontWeight: 'bold',
+        fontSize: '24px',
+        lineHeight: '32px',
+    },
     body16SemiBold: {
         fontFamily: 'heading',
         fontWeight: 'semibold',
@@ -93,5 +117,11 @@ export const textStyles = {
         fontSize: '12px',
         lineHeight: '16px',
         color: 'blackAlpha.700',
+    },
+    body12: {
+        fontFamily: 'heading',
+        fontWeight: 'medium',
+        fontSize: '12px',
+        lineHeight: '16px',
     },
 };

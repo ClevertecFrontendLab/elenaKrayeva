@@ -1,11 +1,11 @@
-import { Box, Button, Flex, Text } from '@chakra-ui/react';
+import { Box, Button, Flex, Text, useBreakpointValue } from '@chakra-ui/react';
 import { v4 as uuidv4 } from 'uuid';
 
-import ArrowRightIcon from '~/assets/ArrowRightBlack.svg?react';
 import avatarImage1 from '~/assets/avatars/Avatar1.jpg';
 import avatarImage2 from '~/assets/avatars/Avatar2.jpg';
 import avatarImage3 from '~/assets/avatars/Avatar3.jpg';
-import { CardsAvatar } from '~/components/FoodBlogs/CardsAvatar';
+import ArrowRightIcon from '~/assets/icons/ArrowRightBlack.svg?react';
+import { FoodBlogCard } from '~/components/FoodBlogs/FoodBlogCard';
 
 const blogers = [
     {
@@ -15,7 +15,7 @@ const blogers = [
         nickname: '@elenapovar',
         avatarUrl: avatarImage1,
         message:
-            'Как раз после праздников, когда мясные продукты еще остались, но никто их уже не хочет, время варить солянку.',
+            'Как раз после праздников, когда мясные продукты еще остались, но никто их уже не хочет, время варить солянку',
     },
     {
         id: uuidv4(),
@@ -24,57 +24,83 @@ const blogers = [
         nickname: '@funtasticooking',
         avatarUrl: avatarImage2,
         message:
-            'Как раз после праздников, когда мясные продукты еще остались, но никто их уже не хочет, время варить солянку.',
+            'Как раз после праздников, когда мясные продукты еще остались, но никто их уже не хочет, время варить солянку',
     },
     {
         id: uuidv4(),
         firstName: 'Екатерина',
         lastName: 'Константинопольская',
-        nickname: '@@bake_and_pie',
+        nickname: '@bake_and_pie',
         avatarUrl: avatarImage3,
         message:
-            'Как раз после праздников, когда мясные продукты еще остались, но никто их уже не хочет, время варить солянку.',
+            'Как раз после праздников, когда мясные продукты еще остались, но никто их уже не хочет, время варить солянку',
     },
 ];
 
-export const FoodBlogs = () => (
-    <Box bgColor='lime.300' p={6} borderRadius='16px' mb={10}>
-        <Flex justify='space-between' align='center' mb={6}>
-            <Text textStyle='heading48'>Кулинарные блоги</Text>
-            <Button
-                variant='outline'
-                bg='transparent'
-                border='none'
-                _hover={{ bg: 'transparent' }}
-                _focus={{ boxShadow: 'none' }}
-                rightIcon={<ArrowRightIcon width='16px' height='16px' />}
-            >
-                Все авторы
-            </Button>
-        </Flex>
+export const FoodBlogs = () => {
+    const headingStyle = useBreakpointValue({
+        base: 'heading48',
+        lg: 'heading30',
+    });
 
-        <Flex gap={4}>
-            {blogers.map((bloger) => (
-                <Flex
-                    direction='column'
-                    bgColor='white'
-                    borderRadius='8px'
-                    px={6}
-                    pb={5}
-                    pt={6}
-                    gap={7}
-                >
-                    <CardsAvatar
+    const isClamped = useBreakpointValue({
+        base: true,
+        md: true,
+        lg: true,
+        xl: false,
+    });
+
+    const showTopButton = useBreakpointValue({
+        base: false,
+        md: false,
+        lg: true,
+    });
+
+    return (
+        <Box bgColor='lime.300' p={6} borderRadius='16px' mb={10}>
+            <Flex justify='space-between' align='center' mb={6}>
+                <Text textStyle={headingStyle}>Кулинарные блоги</Text>
+                {showTopButton && (
+                    <Button
+                        variant='outline'
+                        bg='transparent'
+                        border='none'
+                        _hover={{ bg: 'transparent' }}
+                        _focus={{ boxShadow: 'none' }}
+                        rightIcon={<ArrowRightIcon width='16px' height='16px' />}
+                    >
+                        Все авторы
+                    </Button>
+                )}
+            </Flex>
+
+            <Flex gap={{ base: 3, md: 3, lg: 4 }} flexWrap='wrap'>
+                {blogers.map((bloger) => (
+                    <FoodBlogCard
                         key={bloger.id}
                         avatarUrl={bloger.avatarUrl}
                         fullName={`${bloger.firstName} ${bloger.lastName}`}
                         nickname={bloger.nickname}
+                        message={bloger.message}
+                        isClamped={!!isClamped}
                     />
-                    <Text color='blackAlpha.700' textStyle='body14'>
-                        {bloger.message}
-                    </Text>
+                ))}
+            </Flex>
+
+            {!showTopButton && (
+                <Flex justify='center' mt={6}>
+                    <Button
+                        variant='outline'
+                        bg='transparent'
+                        border='none'
+                        _hover={{ bg: 'transparent' }}
+                        _focus={{ boxShadow: 'none' }}
+                        rightIcon={<ArrowRightIcon width='16px' height='16px' />}
+                    >
+                        Все авторы
+                    </Button>
                 </Flex>
-            ))}
-        </Flex>
-    </Box>
-);
+            )}
+        </Box>
+    );
+};

@@ -1,6 +1,6 @@
 import { Box, Icon, Text, VStack } from '@chakra-ui/react';
 
-import WriteButtonIcon from '~/assets/writeButton.svg?react';
+import WriteButtonIcon from '~/assets/icons/writeButton.svg?react';
 
 export const WriteButton = () => (
     <Box

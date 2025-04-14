@@ -21,9 +21,19 @@ export const HorizontalRecipeCard = ({
         border='1px solid'
         borderColor='blackAlpha.200'
         borderRadius='8px'
+        minW={0}
     >
-        <Icon as={icon} boxSize={5} />
-        <Text flex='1'>{title}</Text>
+        <Icon as={icon} boxSize={5} flexShrink={0} />
+        <Text
+            flex='1'
+            isTruncated
+            noOfLines={1}
+            whiteSpace='nowrap'
+            overflow='hidden'
+            textOverflow='ellipsis'
+        >
+            {title}
+        </Text>
         <Button
             variant='outline'
             borderColor='lime.600'
@@ -31,6 +41,7 @@ export const HorizontalRecipeCard = ({
             _hover={{ bg: 'lime.50' }}
             height='32px'
             onClick={onClick}
+            flexShrink={0}
         >
             {buttonText}
         </Button>
