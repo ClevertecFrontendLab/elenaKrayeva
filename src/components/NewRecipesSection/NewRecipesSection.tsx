@@ -2,7 +2,7 @@ import { Box, Flex, IconButton, Text, useBreakpointValue } from '@chakra-ui/reac
 import { v4 as uuidv4 } from 'uuid';
 
 import ArrowLeftIcon from '~/assets/icons/arrowLeft.svg?react';
-import ArrowRightIcon from '~/assets/icons/ArrowRight.svg?react';
+import ArrowRightIcon from '~/assets/icons/arrowRight.svg';
 import DessertsIcon from '~/assets/icons/deserts.svg?react';
 import FirstDishIcon from '~/assets/icons/first_dish.svg?react';
 import SaladIcon from '~/assets/icons/salad.svg?react';
