@@ -26,7 +26,7 @@ export const AppLayout = () => {
                 as='header'
                 bg='lime.50'
                 h={HEADER_HEIGHT}
-                position='fixed'
+                position={{ base: 'fixed', md: 'sticky' }}
                 top='0'
                 left='0'
                 right='0'
@@ -105,7 +105,6 @@ export const AppLayout = () => {
                 as='main'
                 ml={{ base: '0', lg: LEFT_SIDEBAR_WIDTH }}
                 mr={{ base: '0', lg: RIGHT_SIDEBAR_WIDTH }}
-                pt={HEADER_HEIGHT}
                 px={{ base: '16px', md: '20px', lg: '24px' }}
                 mb={{ base: '100px', lg: 0 }}
             >
